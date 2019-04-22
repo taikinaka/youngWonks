@@ -21,4 +21,7 @@ numberOfBuses = int(numberOfStudentsPerGrade) * int(numberOfGrades) /  int(busCa
 
 numberOfStudents = int(numberOfStudentsPerGrade) * int(numberOfGrades)
 
+numberOfBuses = int(numberOfBuses)
+
 print('A total of',numberOfStudents, 'students will be going for the field trip.', numberOfBuses, 'buses will be needed.' )
+
