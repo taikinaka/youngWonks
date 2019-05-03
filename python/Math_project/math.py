@@ -20,17 +20,17 @@ print('Addtion Subtraction Multiplication Division please capitalized')
 choice = input()
 Score=0
 if choice == 'Addtion':
-    print('Easy Medium Difficult')
+    print('Easy Medium Difficult (Their is 10 questions.)')
     Level = input()
     if Level == 'Easy':
-        print('Addtion Level Easy')49837012+taikinaka@users.noreply.github.com
+        print('Addtion Level Easy')
         for a in range (0,10,1):
             E_Add = random.randint(1,15)
             number1 = E_Add
             E_Add = random.randint(1,15)
             number2 = E_Add
             answer = number1 + number2
-            print(number1, ' + ' ,number2)
+            print('Question',a,': ',number1, ' + ' ,number2)
             pearson_answer = int(input())
             if answer == pearson_answer:
                 print('Correct!')
@@ -47,7 +47,7 @@ if choice == 'Addtion':
             E_Add = random.randint(16,30)
             number2 = E_Add
             answer = number1 + number2
-            print(number1, ' + ' ,number2)
+            print('Question',a,': ',number1, ' + ' ,number2)
             pearson_answer = int(input())
             if answer == pearson_answer:
                 print('Correct!')
@@ -64,7 +64,7 @@ if choice == 'Addtion':
             E_Add = random.randint(50,100)
             number2 = E_Add
             answer = number1 + number2
-            print(number1, ' + ' ,number2)
+            print('Question',a,': ',number1, ' + ' ,number2)
             pearson_answer = int(input())
             if answer == pearson_answer:
                 print('Correct!')
@@ -76,7 +76,7 @@ if choice == 'Addtion':
         #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 elif choice == 'Subtraction':
-    print('Easy Medium Difficult')
+    print('Easy Medium Difficult(Their is 10 questions.)')
     Level = input()
     if Level == 'Easy':
         print('Subtraction Level Easy')
@@ -86,7 +86,7 @@ elif choice == 'Subtraction':
             E_Add = random.randint(1,10)
             number2 = E_Add
             answer = number1 - number2
-            print(number1, ' - ' ,number2)
+            print('Question',a,': ',number1, ' - ' ,number2)
             pearson_answer = int(input())
             if answer == pearson_answer:
                     print('Correct!')
@@ -103,7 +103,7 @@ elif choice == 'Subtraction':
                 E_Add = random.randint(10,20)
                 number2 = E_Add
                 answer = number1 - number2
-                print(number1, ' - ' ,number2)
+                print('Question',a,': ',number1, ' - ' ,number2)
                 pearson_answer = int(input())
                 if answer == pearson_answer:
                     print('Correct!')
@@ -120,7 +120,7 @@ elif choice == 'Subtraction':
                 E_Add = random.randint(50,80)
                 number2 = E_Add
                 answer = number1 - number2
-                print(number1, ' - ' ,number2)
+                print('Question',a,': ',number1, ' - ' ,number2)
                 pearson_answer = int(input())
                 if answer == pearson_answer:
                     print('Correct!')
@@ -132,7 +132,7 @@ elif choice == 'Subtraction':
         #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 elif choice == 'Multiplication':
-    print('Easy Medium Difficult')
+    print('Easy Medium Difficult(Their is 10 questions.)')
     Level = input()
     if Level == 'Easy':
         print('Multiplication Level Easy')
@@ -142,7 +142,7 @@ elif choice == 'Multiplication':
             E_Add = random.randint(1,5)
             number2 = E_Add
             answer = number1 * number2
-            print(number1, ' x ' ,number2)
+            print('Question',a,': ',number1, ' x ' ,number2)
             pearson_answer = int(input())
             if answer == pearson_answer:
                 print('Correct!')
@@ -159,7 +159,7 @@ elif choice == 'Multiplication':
             E_Add = random.randint(5,10)
             number2 = E_Add
             answer = number1 * number2
-            print(number1, ' x ' ,number2)
+            print('Question',a,': ',number1, ' x ' ,number2)
             pearson_answer = int(input())
             if answer == pearson_answer:
                 print('Correct!')
@@ -176,7 +176,7 @@ elif choice == 'Multiplication':
             E_Add = random.randint(20,50)
             number2 = E_Add
             answer = number1 * number2
-            print(number1, ' x ' ,number2)
+            print('Question',a,': ',number1, ' x ' ,number2)
             pearson_answer = int(input())
             if answer == pearson_answer:
                 print('Correct!')
@@ -191,14 +191,14 @@ else:
     print('Easy Medium Difficult')
     Level = input()
     if Level == 'Easy':
-        print('Division Level Easy')
+        print('Division Level Easy(Their is 10 questions.)')
         for a in range (0,10,1):
-            E_Add = 6 or 12 or 18 or 24 or 30 or 36 ############OVER HERE
-            number1 = E_Add
-            E_Add = 3 or 6############OVER HERE
-            number2 = E_Add
+            dividends = [6,12,18,24,30,36]
+            number1 = dividends[random.randint(0,5)]
+            divisors = [3,6]
+            number2 = random.choice(divisors)
             answer = number1 / number2
-            print(number1, ' / ' ,number2)
+            print('Question',a,': ',number1, ' / ' ,number2)
             pearson_answer = int(input())
             if answer == pearson_answer:
                 print('Correct!')
@@ -210,12 +210,12 @@ else:
     elif Level == 'Medium':
         print('Division Level Medium')
         for a in range (0,10,1):
-            E_Add = random.randint(14,28,42,56,70,84,98)############OVER HERE
-            number1 = E_Add
-            E_Add = random.randint(7,14)############OVER HERE
-            number2 = E_Add
+            dividends = [14,28,42,56,70,84,98]
+            number1 = dividends[random.randint(0,6)]
+            divisors = [7,14]
+            number2 = random.choice(divisors)
             answer = number1 / number2
-            print(number1, ' / ' ,number2)
+            print('Question',a,': ',number1, ' / ' ,number2)
             pearson_answer = int(input())
             if answer == pearson_answer:
                 print('Correct!')
@@ -226,13 +226,12 @@ else:
         #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     else:
         print('Division Level Difficult')
-        for a in range (0,10,1):
-            E_Add = random.randint(16,32,48,64,80,96,112,128,144,160,176,192)############OVER HERE
-            number1 = E_Add
-            E_Add = random.randint(8,16)############OVER HERE
-            number2 = E_Add
-            answer = number1 * number2
-            print(number1, ' x ' ,number2)
+        for a in range (10):
+        
+            dividend = random.choice([16,32,48,64,80,96,112,128,144,160,176,192])
+            divisor = random.choice([8,16])
+            answer = dividend / divisor
+            print('Question',a,': ',dividend, ' / ' ,divisor)
             pearson_answer = int(input())
             if answer == pearson_answer:
                 print('Correct!')
