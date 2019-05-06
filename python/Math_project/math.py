@@ -5,25 +5,21 @@ Spyderエディタ
 これは一時的なスクリプトファイルです
 """
 import random
+from colorama import Fore
+from Color import *
 print( )
 print( ) 
 print( )
 print( ) 
-print( )
-print( ) 
-print( )
-print( ) 
-print( )
-
-print('                           Math Quiz Game')
-print('Addtion Subtraction Multiplication Division please capitalized')
+print(Fore.BLUE + '                           Math Quiz Game')
+print(Fore.GREEN + 'Addtion Subtraction Multiplication Division please capitalized')
 choice = input()
 Score=0
 if choice == 'Addtion':
     print('Easy Medium Difficult (Their is 10 questions.)')
     Level = input()
     if Level == 'Easy':
-        print('Addtion Level Easy')
+        print(Fore.GREEN + 'Addtion Level Easy')
         for a in range (0,10,1):
             E_Add = random.randint(1,15)
             number1 = E_Add
@@ -59,7 +55,7 @@ if choice == 'Addtion':
             print('You got ',Score,'/20!')
         #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     elif Level == 'Medium':
-        print('Addtion Level Easy')
+        print(GColor.RGB(255,128,0),'Addtion Level Medium')
         for a in range (0,10,1):
             E_Add = random.randint(16,30)
             number1 = E_Add
@@ -92,7 +88,7 @@ if choice == 'Addtion':
                     Score=Score+1
                 else:
                     print('Wrong!')
-            print('You got ',Score,'/20!')
+            print('You got ',Score,'/20!',GColor.END)
         #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     else:
         print('Addtion Level Hard')
@@ -136,7 +132,7 @@ elif choice == 'Subtraction':
     print('Easy Medium Difficult(Their is 10 questions.)')
     Level = input()
     if Level == 'Easy':
-        print('Subtraction Level Easy')
+        print(Fore.GREEN + 'Subtraction Level Easy')
         for a in range (0,10,1):
             E_Add = random.randint(10,15)
             number1 = E_Add
@@ -249,7 +245,7 @@ elif choice == 'Multiplication':
     print('Easy Medium Difficult(Their is 10 questions.)')
     Level = input()
     if Level == 'Easy':
-        print('Multiplication Level Easy')
+        print(Fore.GREEN + 'Multiplication Level Easy')
         for a in range (0,10,1):
             E_Add = random.randint(1,5)
             number1 = E_Add
@@ -362,7 +358,7 @@ else:
     print('Easy Medium Difficult')
     Level = input()
     if Level == 'Easy':
-        print('Division Level Easy(Their is 10 questions.)')
+        print(Fore.GREEN + 'Division Level Easy(Their is 10 questions.)')
         for a in range (0,10,1):
             dividends = [6,12,18,24,30,36]
             number1 = dividends[random.randint(0,5)]
@@ -398,7 +394,7 @@ else:
             print('You got ',Score,'/20!')
         #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     elif Level == 'Medium':
-        print('Division Level Medium')
+        print(Fore.RED + 'Division Level Medium')
         for a in range (0,10,1):
             dividends = [14,28,42,56,70,84,98]
             number1 = dividends[random.randint(0,6)]
