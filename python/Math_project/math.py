@@ -7,12 +7,13 @@ Spyderエディタ
 import random
 from colorama import Fore
 from Color import *
+from colorama import Style
 print( )
 print( ) 
 print( )
 print( ) 
 print(Fore.BLUE + '                           Math Quiz Game')
-print(Fore.GREEN + 'Addtion Subtraction Multiplication Division please capitalized')
+print(GColor.RGB(0,0,102) + 'Addtion Subtraction Multiplication Division please capitalized')
 choice = input()
 Score=0
 if choice == 'Addtion':
@@ -33,7 +34,7 @@ if choice == 'Addtion':
                 Score=Score+1
             else:
                 print('Wrong!')
-        print('You got ',Score,'/10!')
+        print(GColor.RGB(255,0,0),'You got ',Score,'/10!')
         if int(Score) == 10:
             print(' ')
             print(' ')
@@ -52,7 +53,7 @@ if choice == 'Addtion':
                     Score=Score+1
                 else:
                     print('Wrong!')
-            print('You got ',Score,'/20!')
+            print('You got ',Score,'/20!' + Style.RESET_ALL)
         #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     elif Level == 'Medium':
         print(GColor.RGB(255,128,0),'Addtion Level Medium')
@@ -91,7 +92,7 @@ if choice == 'Addtion':
             print('You got ',Score,'/20!',GColor.END)
         #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     else:
-        print('Addtion Level Hard')
+        print(GColor.RGB(204, 0, 0),'Addtion Level Hard')
         for a in range (0,10,1):
             E_Add = random.randint(50,100)
             number1 = E_Add
@@ -124,12 +125,12 @@ if choice == 'Addtion':
                     Score=Score+1
                 else:
                     print('Wrong!')
-            print('You got ',Score,'/20!')
+            print('You got ',Score,'/20!' + Style.RESET_ALL)
         #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 elif choice == 'Subtraction':
-    print('Easy Medium Difficult(Their is 10 questions.)')
+    print('Easy Medium Difficult')
     Level = input()
     if Level == 'Easy':
         print(Fore.GREEN + 'Subtraction Level Easy')
@@ -165,10 +166,10 @@ elif choice == 'Subtraction':
                         Score=Score+1
                 else:
                     print('Wrong!')
-            print('You got ',Score,'/20!')
+            print('You got ',Score,'/20!' + Style.RESET_ALL)
         #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     elif Level == 'Medium':
-        print('Subtraction Level Medium')
+        print(GColor.RGB(255,128,0),'Subtraction Level Medium')
         for a in range (0,10,1):
             E_Add = random.randint(20,30)
             number1 = E_Add
@@ -201,10 +202,10 @@ elif choice == 'Subtraction':
                     Score=Score+1
                 else:
                     print('Wrong!')
-            print('You got ',Score,'/20!')
+            print('You got ',Score,'/20!',GColor.END)
     #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     else:
-        print('Subtraction Level Difficult')
+        print(GColor.RGB(204, 0, 0),'Subtraction Level Difficult')
         for a in range (0,10,1):
             E_Add = random.randint(80,100)
             number1 = E_Add
@@ -237,12 +238,12 @@ elif choice == 'Subtraction':
                     Score=Score+1
                 else:
                     print('Wrong!')
-            print('You got ',Score,'/20!')
+            print('You got ',Score,'/20!' + Style.RESET_ALL)
         #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 elif choice == 'Multiplication':
-    print('Easy Medium Difficult(Their is 10 questions.)')
+    print('Easy Medium Difficult')
     Level = input()
     if Level == 'Easy':
         print(Fore.GREEN + 'Multiplication Level Easy')
@@ -278,10 +279,10 @@ elif choice == 'Multiplication':
                     Score=Score+1
                 else:
                     print('Wrong!')
-            print('You got ',Score,'/20!')
+            print('You got ',Score,'/20!' + Style.RESET_ALL)
         #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     elif Level == 'Medium':
-        print('Multiplication Level Medium')
+        print(GColor.RGB(255,128,0),'Multiplication Level Medium')
         for a in range (0,10,1):
             E_Add = random.randint(5,10)
             number1 = E_Add
@@ -314,10 +315,10 @@ elif choice == 'Multiplication':
                     Score=Score+1
                 else:
                     print('Wrong!')
-            print('You got ',Score,'/20!')
+            print('You got ',Score,'/20!',GColor.END)
         #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     else:
-        print('Multiplication Level Difficult')
+        print(GColor.RGB(204, 0, 0),'Multiplication Level Difficult')
         for a in range (0,10,1):
             E_Add = random.randint(20,50)
             number1 = E_Add
@@ -350,7 +351,7 @@ elif choice == 'Multiplication':
                     Score=Score+1
                 else:
                     print('Wrong!')
-            print('You got ',Score,'/20!')
+            print('You got ',Score,'/20!' + Style.RESET_ALL)
         #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -358,7 +359,7 @@ else:
     print('Easy Medium Difficult')
     Level = input()
     if Level == 'Easy':
-        print(Fore.GREEN + 'Division Level Easy(Their is 10 questions.)')
+        print(Fore.GREEN + 'Division Level Easy')
         for a in range (0,10,1):
             dividends = [6,12,18,24,30,36]
             number1 = dividends[random.randint(0,5)]
@@ -391,10 +392,10 @@ else:
                     Score=Score+1
                 else:
                     print('Wrong!')
-            print('You got ',Score,'/20!')
+            print('You got ',Score,'/20!' + Style.RESET_ALL)
         #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     elif Level == 'Medium':
-        print(Fore.RED + 'Division Level Medium')
+        print(GColor.RGB(255,128,0),'Division Level Medium')
         for a in range (0,10,1):
             dividends = [14,28,42,56,70,84,98]
             number1 = dividends[random.randint(0,6)]
@@ -427,10 +428,10 @@ else:
                     Score=Score+1
                 else:
                     print('Wrong!')
-            print('You got ',Score,'/20!')
+            print('You got ',Score,'/20!',GColor.END)
         #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     else:
-        print('Division Level Difficult')
+        print(GColor.RGB(204, 0, 0),'Division Level Difficult')
         for a in range (10):
             dividend = random.choice([16,32,48,64,80,96,112,128,144,160,176,192])
             divisor = random.choice([8,16])
@@ -459,7 +460,7 @@ else:
                     Score=Score+1
                 else:
                     print('Wrong!')
-            print('You got ',Score,'/20!')
+            print('You got ',Score,'/20!' + Style.RESET_ALL)
         #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
