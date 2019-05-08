@@ -13,14 +13,14 @@ print( )
 print( )
 print( ) 
 print(Fore.BLUE + '                           Math Quiz Game')
-print(GColor.RGB(0,0,102) + 'Addtion Subtraction Multiplication Division please capitalized')
+print(GColor.RGB(0,0,102) + 'Addition Subtraction Multiplication Division please capitalized')
 choice = input()
 Score=0
-if choice == 'Addtion':
-    print('Easy Medium Difficult (Their is 10 questions.)')
+if choice == 'Addition':
+    print('Easy Medium Difficult')
     Level = input()
     if Level == 'Easy':
-        print(Fore.GREEN + 'Addtion Level Easy')
+        print(Fore.GREEN + 'Addition Level Easy')
         for a in range (0,10,1):
             E_Add = random.randint(1,15)
             number1 = E_Add
@@ -56,7 +56,7 @@ if choice == 'Addtion':
             print('You got ',Score,'/20!' + Style.RESET_ALL)
         #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     elif Level == 'Medium':
-        print(GColor.RGB(255,128,0),'Addtion Level Medium')
+        print(GColor.RGB(255,128,0),'Addition Level Medium')
         for a in range (0,10,1):
             E_Add = random.randint(16,30)
             number1 = E_Add
@@ -92,7 +92,7 @@ if choice == 'Addtion':
             print('You got ',Score,'/20!',GColor.END)
         #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     else:
-        print(GColor.RGB(204, 0, 0),'Addtion Level Hard')
+        print(GColor.RGB(204, 0, 0),'Addition Level Hard')
         for a in range (0,10,1):
             E_Add = random.randint(50,100)
             number1 = E_Add
@@ -125,7 +125,7 @@ if choice == 'Addtion':
                     Score=Score+1
                 else:
                     print('Wrong!')
-            print('You got ',Score,'/20!' + Style.RESET_ALL)
+            print('You got ',Score,'/20!',GColor.END)
         #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -238,7 +238,7 @@ elif choice == 'Subtraction':
                     Score=Score+1
                 else:
                     print('Wrong!')
-            print('You got ',Score,'/20!' + Style.RESET_ALL)
+            print('You got ',Score,'/20!',GColor.END)
         #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -351,7 +351,7 @@ elif choice == 'Multiplication':
                     Score=Score+1
                 else:
                     print('Wrong!')
-            print('You got ',Score,'/20!' + Style.RESET_ALL)
+            print('You got ',Score,'/20!',GColor.END)
         #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -460,7 +460,7 @@ else:
                     Score=Score+1
                 else:
                     print('Wrong!')
-            print('You got ',Score,'/20!' + Style.RESET_ALL)
+            print('You got ',Score,'/20!',GColor.END)
         #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
