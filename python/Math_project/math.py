@@ -13,13 +13,13 @@ print( )
 print( )
 print( ) 
 print(Fore.BLUE + '                           Math Quiz Game')
-print(GColor.RGB(0,0,102) + 'Addition Subtraction Multiplication Division please capitalized')
+print(GColor.RGB(0,0,102) + '      Addition or Subtraction or Multiplication or Division')
 choice = input()
 Score=0
-if choice == 'Addition':
+if choice[0] == 'A' or 'a':
     print('Easy Medium Difficult')
     Level = input()
-    if Level == 'Easy':
+    if Level[0] == 'E' or 'e':
         print(Fore.GREEN + 'Addition Level Easy')
         for a in range (0,10,1):
             E_Add = random.randint(1,15)
@@ -55,7 +55,7 @@ if choice == 'Addition':
                     print('Wrong!')
             print('You got ',Score,'/20!' + Style.RESET_ALL)
         #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    elif Level == 'Medium':
+    elif Level[0] == 'M' or 'm':
         print(GColor.RGB(255,128,0),'Addition Level Medium')
         for a in range (0,10,1):
             E_Add = random.randint(16,30)
@@ -129,10 +129,10 @@ if choice == 'Addition':
         #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-elif choice == 'Subtraction':
+elif choice[0] == 'S' or 's':
     print('Easy Medium Difficult')
     Level = input()
-    if Level == 'Easy':
+    if Level[0] == 'E' or 'e':
         print(Fore.GREEN + 'Subtraction Level Easy')
         for a in range (0,10,1):
             E_Add = random.randint(10,15)
@@ -168,7 +168,7 @@ elif choice == 'Subtraction':
                     print('Wrong!')
             print('You got ',Score,'/20!' + Style.RESET_ALL)
         #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    elif Level == 'Medium':
+    elif Level[0] == 'M' or 'm':
         print(GColor.RGB(255,128,0),'Subtraction Level Medium')
         for a in range (0,10,1):
             E_Add = random.randint(20,30)
@@ -242,10 +242,10 @@ elif choice == 'Subtraction':
         #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-elif choice == 'Multiplication':
+elif choice[0] == 'M' or 'm':
     print('Easy Medium Difficult')
     Level = input()
-    if Level == 'Easy':
+    if Level[0] == 'E' or 'e':
         print(Fore.GREEN + 'Multiplication Level Easy')
         for a in range (0,10,1):
             E_Add = random.randint(1,5)
@@ -281,7 +281,7 @@ elif choice == 'Multiplication':
                     print('Wrong!')
             print('You got ',Score,'/20!' + Style.RESET_ALL)
         #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    elif Level == 'Medium':
+    elif Level[0] == 'M' or 'm':
         print(GColor.RGB(255,128,0),'Multiplication Level Medium')
         for a in range (0,10,1):
             E_Add = random.randint(5,10)
@@ -358,7 +358,7 @@ elif choice == 'Multiplication':
 else:
     print('Easy Medium Difficult')
     Level = input()
-    if Level == 'Easy':
+    if Level[0] == 'E' or 'e':
         print(Fore.GREEN + 'Division Level Easy')
         for a in range (0,10,1):
             dividends = [6,12,18,24,30,36]
@@ -394,7 +394,7 @@ else:
                     print('Wrong!')
             print('You got ',Score,'/20!' + Style.RESET_ALL)
         #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    elif Level == 'Medium':
+    elif Level[0] == 'M' or 'm':
         print(GColor.RGB(255,128,0),'Division Level Medium')
         for a in range (0,10,1):
             dividends = [14,28,42,56,70,84,98]
