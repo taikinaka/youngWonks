@@ -8,14 +8,36 @@ Spyderエディタ
 import threading
 import random
 import time
-import sys
+import signal
+import os
+
+class GameTimer(threading.Thread):
+    def restart(self):
+        self.my_timer = time.time() + 20
+        self.isOn = True
+    def turnOff(self):
+        self.isOn = False
+    def run(self, *args):
+        self.restart()
+        count=20
+        while 1:
+            print("\t\t\t\t\t\t\t\t",count)
+            time.sleep(1)
+            count=count-1
+            if time.time() >= self.my_timer or not self.isOn:
+                break
+        if self.isOn:
+            print("game over")
+            os.kill(os.getpid(), signal.SIGINT)
+
 def timer():
     for count in range (10,1,-1):
         print("\t\t\t\t\t\t\t\t",count)
         time.sleep(1)
     print("game over")
-    raise Exception('exit')
-     
+    os.kill(os.getpid(), signal.SIGINT)
+    # raise Exception('exit')
+
 
 from colorama import Fore
 from Color import *
@@ -23,9 +45,9 @@ from colorama import Style
 from time import sleep
 def game():
     print( )
-    print( ) 
     print( )
-    print( ) 
+    print( )
+    print( )
     print(Fore.BLUE + '                           Math Quiz Game')
     print(GColor.RGB(0,0,102) + '      Addition or Subtraction or Multiplication or Division')
     choice = input()
@@ -35,19 +57,26 @@ def game():
         Level = input()
         if Level[0] == 'E' or Level[0] == 'e':
             print(Fore.GREEN + 'Addition Level Easy')
-            for a in range (0,10,1):  
-                E_Add = random.randint(1,15)
-                number1 = E_Add
-                E_Add = random.randint(1,15)
-                number2 = E_Add
-                answer = number1 + number2
-                print('Question',a + 1,': ',number1, ' + ' ,number2)
-                pearson_answer = int(input())
-                if answer == pearson_answer:
-                    print('Correct!')
-                    Score=Score+1
-                else:
-                    print('Wrong!')
+            try:
+                timer =GameTimer()
+                timer.daemon=True
+                timer.start() # start timer
+                for a in range (0,10,1):
+                    E_Add = random.randint(1,15)
+                    number1 = E_Add
+                    E_Add = random.randint(1,15)
+                    number2 = E_Add
+                    answer = number1 + number2
+                    print('Question',a + 1,': ',number1, ' + ' ,number2)
+                    pearson_answer = int(input())
+                    if answer == pearson_answer:
+                        print('Correct!')
+                        Score=Score+1
+                    else:
+                        print('Wrong!')
+                timer.turnOff() #Stop timer
+            except KeyboardInterrupt:
+                print("\nGame Over!")
             print(GColor.RGB(255,0,0),'You got ',Score,'/10!')
             if int(Score) == 10:
                 print(' ')
@@ -478,12 +507,10 @@ def game():
         #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-t1=threading.Thread(target=timer)
-t2=threading.Thread(target=game)
-t1.start()
-t2.start()
-t1.join()
-t2.join()
-
-
-
+game()
+        #t1=threading.Thread(target=timer)
+#t2=threading.Thread(target=game)
+#t1.start()
+#t2.start()
+#t1.join()
+#t2.join()
