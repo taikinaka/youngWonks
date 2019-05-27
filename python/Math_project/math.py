@@ -13,13 +13,13 @@ import os
 
 class GameTimer(threading.Thread):
     def restart(self):
-        self.my_timer = time.time() + 20
+        self.my_timer = time.time() + 50
         self.isOn = True
     def turnOff(self):
         self.isOn = False
     def run(self, *args):
         self.restart()
-        count=20
+        count=50
         while 1:
             print("\t\t\t\t\t\t\t\t",count)
             time.sleep(1)
@@ -27,14 +27,13 @@ class GameTimer(threading.Thread):
             if time.time() >= self.my_timer or not self.isOn:
                 break
         if self.isOn:
-            print("game over")
             os.kill(os.getpid(), signal.SIGINT)
 
 def timer():
     for count in range (10,1,-1):
         print("\t\t\t\t\t\t\t\t",count)
         time.sleep(1)
-    print("game over")
+    print("game over.")
     os.kill(os.getpid(), signal.SIGINT)
     # raise Exception('exit')
 
@@ -83,6 +82,9 @@ def game():
                 print(' ')
                 print('10 more!')
                 print(' ')
+                timer =GameTimer()
+                timer.daemon=True
+                timer.start() # start timer
                 for a in range (0,10,1):
                     E_Add = random.randint(1,15)
                     number1 = E_Add
@@ -96,29 +98,15 @@ def game():
                         Score=Score+1
                     else:
                         print('Wrong!')
+                timer.turnOff() #Stop timer
                 print('You got ',Score,'/20!' + Style.RESET_ALL)
             #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         elif Level[0] == 'M' or Level[0] == 'm':
             print(GColor.RGB(255,128,0),'Addition Level Medium')
-            for a in range (0,10,1):
-                E_Add = random.randint(16,30)
-                number1 = E_Add
-                E_Add = random.randint(16,30)
-                number2 = E_Add
-                answer = number1 + number2
-                print('Question',a + 1,': ',number1, ' + ' ,number2)
-                pearson_answer = int(input())
-                if answer == pearson_answer:
-                    print('Correct!')
-                    Score=Score+1
-                else:
-                    print('Wrong!')
-            print('You got ',Score,'/10!')
-            if int(Score) == 10:
-                print(' ')
-                print(' ')
-                print('10 more!')
-                print(' ')
+            try:
+                timer =GameTimer()
+                timer.daemon=True
+                timer.start() # start timer
                 for a in range (0,10,1):
                     E_Add = random.randint(16,30)
                     number1 = E_Add
@@ -132,29 +120,65 @@ def game():
                         Score=Score+1
                     else:
                         print('Wrong!')
-                print('You got ',Score,'/20!',GColor.END)
-            #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        else:
-            print(GColor.RGB(204, 0, 0),'Addition Level Hard')
-            for a in range (0,10,1):
-                E_Add = random.randint(50,100)
-                number1 = E_Add
-                E_Add = random.randint(50,100)
-                number2 = E_Add
-                answer = number1 + number2
-                print('Question',a + 1,': ',number1, ' + ' ,number2)
-                pearson_answer = int(input())
-                if answer == pearson_answer:
-                    print('Correct!')
-                    Score=Score+1
-                else:
-                    print('Wrong!')
-            print('You got ',Score,'/10!')
+                print('You got ',Score,'/10!')
+                timer.turnOff() #Stop timer
+            except KeyboardInterrupt:
+                print("\nGame Over!")
+                print(GColor.RGB(255,0,0),'You got ',Score,'/10!')
             if int(Score) == 10:
                 print(' ')
                 print(' ')
                 print('10 more!')
                 print(' ')
+                timer =GameTimer()
+                timer.daemon=True
+                timer.start() # start timer
+                for a in range (0,10,1):
+                    E_Add = random.randint(16,30)
+                    number1 = E_Add
+                    E_Add = random.randint(16,30)
+                    number2 = E_Add
+                    answer = number1 + number2
+                    print('Question',a + 1,': ',number1, ' + ' ,number2)
+                    pearson_answer = int(input())
+                    if answer == pearson_answer:
+                        print('Correct!')
+                        Score=Score+1
+                    else:
+                        print('Wrong!')
+                timer.turnOff() #Stop timer
+                print('You got ',Score,'/20!',GColor.END)
+            #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        else:
+            print(GColor.RGB(204, 0, 0),'Addition Level Hard')
+            try:
+                timer =GameTimer()
+                timer.daemon=True
+                timer.start() # start timer
+                for a in range (0,10,1):
+                    E_Add = random.randint(50,100)
+                    number1 = E_Add
+                    E_Add = random.randint(50,100)
+                    number2 = E_Add
+                    answer = number1 + number2
+                    print('Question',a + 1,': ',number1, ' + ' ,number2)
+                    pearson_answer = int(input())
+                    if answer == pearson_answer:
+                        print('Correct!')
+                        Score=Score+1
+                    else:
+                        print('Wrong!')
+                print('You got ',Score,'/10!')
+                timer.turnOff() #Stop timer
+            except KeyboardInterrupt:
+                print("\nGame Over!")
+                print(GColor.RGB(255,0,0),'You got ',Score,'/10!')
+            if int(Score) == 10:
+                print(' ')
+                print(' ')
+                print('10 more!')
+                print(' ')
+                
                 for a in range (0,10,1):
                     E_Add = random.randint(50,100)
                     number1 = E_Add
