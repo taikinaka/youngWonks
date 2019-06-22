@@ -42,13 +42,14 @@ from colorama import Fore
 from Color import *
 from colorama import Style
 from time import sleep
+
 def game():
     print( )
     print( )
     print( )
     print( )
     print(Fore.BLUE + '                           Math Quiz Game')
-    print(GColor.RGB(0,0,102) + '      Addition or Subtraction or Multiplication or Division')
+    print(GColor.RGB(148,0,211) + '      Addition or Subtraction or Multiplication or Division')
     choice = input()
     Score=0
     if choice[0] == 'A' or choice[0] == 'a':

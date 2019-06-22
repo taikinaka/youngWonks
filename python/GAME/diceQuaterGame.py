@@ -6,10 +6,14 @@ Created on Sun May 19 14:10:21 2019
 @author: taikinaka
 """
 #print('put key')
+
 K = int(input())
+print('')
 #print('Put numbers')
 prob = 0
+print('put number')
 N = int(input())
+
 for a in range(1,N+1):
     p = 0
     num = a
